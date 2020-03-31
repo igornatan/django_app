@@ -5,11 +5,18 @@ from django.shortcuts import render
 
 
 def index(request):
-    return render(request=request, template_name='index.html')
+	data = {
+		'recipes_names': [
+			'Bolo de Cenoura', 
+			'Bolo de Chocolate',
+			'Torta de Maça'
+		]
+	}
+	return render(request=request, template_name='index.html', context=data)
 
 
 def receita(request):
-    return render(request=request, template_name='receita.html', context={'teste': ['igor']})
+	return render(request=request, template_name='receita.html')
 
 
 def bolo_cenoura(request):
